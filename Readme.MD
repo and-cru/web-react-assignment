@@ -64,8 +64,8 @@ docker-compose down
 
 You are building the Frontend for a Coffee recipe website, where coffee lovers can join as a brewer and create a new coffee recipe to share with the world. Feel free to use your creativity with the site, there are 4 minimum requirements:
 
-1. Create a new brewer
-2. Brewers can create a new coffee recipe
+1. We must be able to create a new brewer
+2. Only breweres can create a new coffee recipe
 3. Brewers / Guests can view a page of all created recipes by Brewers
 4. A page to view more detail about a created coffee recipe
 
