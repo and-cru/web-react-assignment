@@ -40,6 +40,13 @@ def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     brewers = crud.get_brewers(db, skip=skip, limit=limit)
     return brewers
 
+@app.delete("/brewers/{brewer_id}", status_code=200)
+def delete_brewer(brewer_id: int, db: Session = Depends(get_db)):
+    db_user = crud.get_brewer_by_id(db, brewer_id)
+    if db_user == None:
+        raise HTTPException(status_code=404, detail="Brewer does not exist")
+    return crud.delete_brewer(db, brewer_id)
+
 @app.get("/brewers/{brewer_id}", response_model=schemas.Brewer)
 def read_brewer(brewer_id: int, db: Session = Depends(get_db)):
     db_user = crud.get_brewer(db, brewer_id=brewer_id)
@@ -57,3 +64,10 @@ def create_recipe_for_brewer(
 def read_items(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     recipes = crud.get_recipes(db, skip=skip, limit=limit)
     return recipes
+
+@app.delete("/recipes/{recipe_id}", status_code=200)
+def delete_recipe(recipe_id: int, db: Session = Depends(get_db)):
+    db_recipe = crud.get_recipe_by_id(db, recipe_id)
+    if db_recipe == None:
+        raise HTTPException(status_code=404, detail="Recipe not found")
+    return crud.delete_brewer_recipe(db, recipe_id)
