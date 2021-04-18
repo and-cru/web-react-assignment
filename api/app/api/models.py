@@ -23,6 +23,7 @@ class Recipe(Base):
     brew_time = Column(Float, index=True)
     taste_notes = Column(String, index=True)
     tags = Column(String, index=True)
+    views = Column(Integer, index=True, default=0)
     brewer_id = Column(Integer, ForeignKey("brewers.id"))
 
     brewer = relationship("Brewer", back_populates="recipes")

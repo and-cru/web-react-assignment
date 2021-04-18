@@ -39,6 +39,11 @@ def create_brewer_recipe(db: Session, recipe: schemas.RecipeCreate, brewer_id: i
 def get_recipe_by_id(db: Session, recipe_id: int):
     return db.query(models.Recipe).filter(models.Recipe.id == recipe_id).first()
 
+def update_recipe_views(db: Session, recipe_id: int):
+    db.query(models.Recipe).filter(models.Recipe.id == recipe_id).update({"views": (models.Recipe.views + 1)})
+    db.commit()
+    return
+
 def delete_brewer_recipe(db: Session, recipe_id: int):
     db_recipe = db.query(models.Recipe).filter(models.Recipe.id == recipe_id).first()
     db.delete(db_recipe)
