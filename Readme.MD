@@ -69,6 +69,8 @@ You are building the Frontend for a Coffee recipe website, where coffee lovers c
 3. Brewers / Guests can view a page of all created recipes by Brewers
 4. A page to view more detail about a created coffee recipe
 
+The API to create new recipes and to create a brewer is already created for you, it is just the React frontend which is required.
+
 After completing the step in [Get it running](#get-it-running), follow the below URLs in your browser to view the API documentation and the React Web App:
 
 - Coffee API: `localhost:8080/docs`
