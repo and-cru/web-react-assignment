@@ -1,0 +1,42 @@
+version: '3.7'
+services:
+    postgres:
+      image: postgres:12.1-alpine
+      container_name: pg_docker
+      ports:
+        - '5432:5432'
+      environment: 
+        - POSTGRES_USER=postgres
+        - POSTGRES_PASSWORD=postgres
+        - POSTGRES_DB=postgress
+      volumes:
+        - postgres_data:/var/lib/postgresql/data/
+
+    api:
+      build: ./src
+      command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+      container_name: coffee_api
+      volumes:
+        - ./src/:/usr/src/app/
+      ports:
+        - 8080:8000
+      depends_on:
+        - postgres
+      environment:
+        - DATABASE_URL=postgresql://postgres:postgres@postgres/postgres
+    
+    web:
+      build: ./web
+      command: yarn start
+      container_name: react_web
+      volumes:
+        - ./web:/usr/src/web
+      ports:
+        - 8088:3000
+      depends_on:
+        - postgres
+      environment:
+        - API_HOSTNAME=api
+
+volumes:
+  postgres_data:
