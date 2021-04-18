@@ -13,7 +13,7 @@ Please follow the below instructions to get everything set up correct and runnin
 Clone the repository by running the below command:
 
 ```bash
-git clone git@github.com:and-cru/web-react-assignment.git
+git clone https://github.com/and-cru/web-react-assignment.git
 ```
 
 Navigate into the directory like below:
