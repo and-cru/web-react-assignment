@@ -13,11 +13,11 @@ services:
         - postgres_data:/var/lib/postgresql/data/
 
     api:
-      build: ./src
-      command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8000
+      build: ./api
+      command: uvicorn app.main:app --reload --workers 2 --host 0.0.0.0 --port 8000
       container_name: coffee_api
       volumes:
-        - ./src/:/usr/src/app/
+        - ./api/:/usr/src/app/
       ports:
         - 8080:8000
       depends_on:
@@ -32,7 +32,7 @@ services:
       volumes:
         - ./web:/usr/src/web
       ports:
-        - 8088:3000
+        - 9000:3000
       depends_on:
         - postgres
       environment:
