@@ -42,17 +42,17 @@ docker-compose up -d --build
 
 This will bring up a [PostgreSQL]() DB, a python API written in [FastAPI]() and a [React] web app container. For this assignment we will work on the React project mainly, which is located inside the `web` directory, do not worry about starting the local development server for React it is running already. Just save any changes made to the files and the changes will reflect, in case you have installed other `npm` packages, you will need to restart the running docker containers, this can be done with the below command:
 
-After this step, let's check that all the components are up and running, in your browser try going to:
+```bash
+docker-compose restart
+```
+
+After starting the 3 containers, let's check that all the components are up and running, in your browser try going to:
 
 - Coffee API: `localhost:8080/health`
   - This will return a `I am healthy` message in the browser
   - If there is no `I am  healthy` message, feel free to reach out to us
 - React Web App: `localhost:9000`
   - It may take a moment or two for the development server to start, if after 5 minutes there is no response. Feel free to reach out to us
-
-```bash
-docker-compose restart
-```
 
 Please note, to stop the Docker containers running please ensure you are in the `web-react-assignment` directory and use the below command:
 
