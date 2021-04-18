@@ -78,7 +78,7 @@ After completing the step in [Get it running](#get-it-running), follow the below
 
 ## Submitting the assignment
 
-Please commit your work to your branch frequently, with meaningful commit messages, this allows us to follow your trail of thought when reviewing the submitted assignment. If you to add some documentation or additional explanation feel free to edit the `web/README.md`.
+Please commit your work to your branch frequently, with meaningful commit messages, this allows us to follow your trail of thought when reviewing the submitted assignment. If you want to add some documentation or additional explanation feel free to edit the `web/README.md`.
 
 Enjoy, have fun and let us know if there are issues running the assignment.
 
