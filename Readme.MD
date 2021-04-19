@@ -62,12 +62,11 @@ docker-compose down
 
 ## Assignment
 
-You are building the Frontend for a Coffee recipe website, where coffee lovers can join as a brewer and create a new coffee recipe to share with the world. Feel free to use your creativity with the site, there are 4 minimum requirements:
+You are building the Frontend for a Coffee recipe website, where coffee lovers can join as a brewer and create a new coffee recipe to share with the world. Feel free to use your creativity with the site, there are 3 minimum requirements:
 
-1. We must be able to create a new brewer
-2. Only breweres can create a new coffee recipe
-3. Brewers / Guests can view a page of all created recipes by Brewers
-4. A page to view more detail about a created coffee recipe
+1. Ability to create a new coffee recipe, which has an owner or "brewer"
+2. A page of all created recipes by Brewers, which is visible to everyone
+3. A page to view more detail about a created coffee recipe
 
 The API to create new recipes and to create a brewer is already created for you, it is just the React frontend which is required.
 
