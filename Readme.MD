@@ -10,31 +10,9 @@ The rest is simple, all you need is a simple text editor of your choice.
 
 Please follow the below instructions to get everything set up correct and running.
 
-Clone the repository by running the below command:
+Fork this repository by following the steps [here](https://guides.github.com/activities/forking/). Clone the forked repository and navigate into the base directory of the cloned repository. Ensure you can push changes to your working branch on the forked repository.
 
-```bash
-git clone https://github.com/and-cru/web-react-assignment.git
-```
-
-Navigate into the directory like below:
-
-```bash
-cd web-react-assignment/
-```
-
-Checkout a new branch, this will be your working branch, please use your name and surname for the branch:
-
-```bash
-git checkout -b <name-and-surname>
-```
-
-After checking out your branch, please push to the remote repository before starting by running the below command:
-
-```bash
-git push origin <name-and-surname>
-```
-
-Ok now that version control is all set. Let's test if everything is running, inside the directory of the cloned project run the below command:
+Ok now that version control is all set. Let's test if everything is running, inside the base project directory of the cloned project run the below command:
 
 ```bash
 docker-compose up -d --build
