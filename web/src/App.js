@@ -7,15 +7,19 @@ import HomePage from "./pages/home-page/home-page.component";
 import CreateBrewerPage from "./pages/create-brewer-page/create-brewer-page.component";
 import CreateRecipePage from "./pages/create-recipe-page/create-recipe-page.component";
 import ProfilePage from "./pages/profile-page/profile-page.component";
+import BrewersRecipesPage from "./pages/brewers-recipes-page/brewers-recipes-page.component";
+import Header from "./components/header/header.component";
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
+        <Route path="/profile" component={ProfilePage} />
+        <Route path="/brewersrecipes" component={BrewersRecipesPage} />
         <Route path="/createbrewer" component={CreateBrewerPage} />
         <Route path="/createrecipe" component={CreateRecipePage} />
-        <Route path="/profile" component={ProfilePage} />
       </Switch>
     </div>
   );
