@@ -10,7 +10,7 @@ const CreateBrewer = () => {
     name: "",
   });
 
-  //form data from form saved in state
+  //form data from Form saved in state
   const handleChange = (event) => {
     const { name, value } = event.target;
 

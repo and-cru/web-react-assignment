@@ -4,6 +4,7 @@ import FormInput from "../../components/form-input/form-input.component";
 import "./create-recipe-page.styles.scss";
 
 const CreateRecipe = () => {
+  //initialse state
   const [data, setData] = useState({
     title: "",
     description: "",
@@ -14,6 +15,7 @@ const CreateRecipe = () => {
     tags: "",
   });
 
+  //form data from Form saved in state
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -25,6 +27,7 @@ const CreateRecipe = () => {
     });
   };
 
+  // POST request to API
   const handleSubmit = async (event) => {
     event.preventDefault();
 
