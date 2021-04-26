@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import FormInput from "../../components/form-input/form-input.component";
+import { CurrentUserContext } from "../../components/contexts/users/current-user.context";
 
 import "./create-recipe-page.styles.scss";
 
@@ -14,6 +15,9 @@ const CreateRecipe = () => {
     taste_notes: "",
     tags: "",
   });
+
+  // use currentUser.id from context to define GET url parameter
+  const currentUser = useContext(CurrentUserContext);
 
   //form data from Form saved in state
   const handleChange = (event) => {
@@ -30,12 +34,15 @@ const CreateRecipe = () => {
   // POST request to API
   const handleSubmit = async (event) => {
     event.preventDefault();
-
-    const response = await fetch(`http://localhost:8080/brewers/2/recipes/`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data),
-    });
+    const brewer = currentUser.id;
+    const response = await fetch(
+      `http://localhost:8080/brewers/${brewer}/recipes/`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      }
+    );
     const resJson = await response.json();
     console.log(resJson);
   };

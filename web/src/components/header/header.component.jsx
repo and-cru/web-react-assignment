@@ -16,11 +16,6 @@ const Header = () => {
         <Logo className="logo" />
       </Link>
       <div className="options">
-        {currentUser.id && (
-          <Link className="option" to="/profile">
-            My Profile
-          </Link>
-        )}
         <Link className="option" to="/brewersrecipes">
           Recipes
         </Link>
@@ -31,6 +26,11 @@ const Header = () => {
         ) : (
           <Link className="option" to="/createbrewer">
             Create Brewer
+          </Link>
+        )}
+        {currentUser.id && (
+          <Link className="option" to="/profile">
+            My Profile
           </Link>
         )}
       </div>
