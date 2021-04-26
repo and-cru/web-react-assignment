@@ -3,8 +3,10 @@ import React, { useState, useEffect } from "react";
 import "./profile-page.styles.scss";
 
 const ProfilePage = () => {
+  //initialise state
   const [brewer, setBrewer] = useState([]);
 
+  //run side-effect fetch whenever ProfilePage renders
   useEffect(() => {
     const fetchBrewer = async () => {
       const response = await fetch(`http://localhost:8080/brewers/2`);
