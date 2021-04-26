@@ -14,7 +14,7 @@ const Header = () => {
         <Link className="option" to="/profile">
           My Profile
         </Link>
-        <Link className="option" to="/profile">
+        <Link className="option" to="/brewersrecipes">
           Recipes
         </Link>
         <Link className="option" to="/createrecipe">
