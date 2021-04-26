@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { CurrentUserContext } from "../../components/contexts/users/current-user.context";
 
 import "./profile-page.styles.scss";
 
@@ -6,10 +7,13 @@ const ProfilePage = () => {
   //initialise state
   const [brewer, setBrewer] = useState([]);
 
+  const currentUser = useContext(CurrentUserContext);
+  const brewerId = currentUser.id;
+
   //run side-effect fetch whenever ProfilePage renders
   useEffect(() => {
     const fetchBrewer = async () => {
-      const response = await fetch(`http://localhost:8080/brewers/2`);
+      const response = await fetch(`http://localhost:8080/brewers/${brewerId}`);
       const resJson = await response.json();
       setBrewer(resJson);
     };
