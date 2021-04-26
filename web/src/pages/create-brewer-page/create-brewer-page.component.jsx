@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { CurrentUserContext } from "../../components/contexts/users/current-user.context";
 
 import "./create-brewer-page.styles.scss";
 
@@ -9,6 +10,8 @@ const CreateBrewer = () => {
   const [data, setData] = useState({
     name: "",
   });
+
+  const currentUser = useContext(CurrentUserContext);
 
   //form data from Form saved in state
   const handleChange = (event) => {
@@ -31,9 +34,13 @@ const CreateBrewer = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
     });
-
     const resJson = await response.json();
-    console.log(resJson);
+
+    //setState functions to update CurrentUserContext from current-user.js
+    const setCurrentUserName = () => currentUser.setName(resJson.name);
+    const setCurrentUserId = () => currentUser.setId(resJson.id);
+    setCurrentUserName();
+    setCurrentUserId();
   };
 
   return (

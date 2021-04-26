@@ -24,7 +24,7 @@ const Header = () => {
         <Link className="option" to="/brewersrecipes">
           Recipes
         </Link>
-        {!currentUser.id ? (
+        {currentUser.id ? (
           <Link className="option" to="/createrecipe">
             Create Recipe
           </Link>
