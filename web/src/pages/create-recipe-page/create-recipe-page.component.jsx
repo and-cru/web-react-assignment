@@ -44,7 +44,7 @@ const CreateRecipe = () => {
       }
     );
     const resJson = await response.json();
-    console.log(resJson);
+    console.log(resJson); //Remove
   };
 
   return (

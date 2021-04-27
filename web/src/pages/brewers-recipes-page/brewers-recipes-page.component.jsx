@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import "./brewers-recipes-page.styles.scss";
 
+import BrewerCard from "../../components/brewer-card/brewer-card.component";
+
 const BrewersRecipesPage = () => {
   //initialise state
   const [brewers, setBrewers] = useState([]);
@@ -19,11 +21,13 @@ const BrewersRecipesPage = () => {
   }, []);
 
   console.log(brewers);
-  //   console.log(brewers[1].recipes);
 
   return (
     <div className="">
       <h1>Recipes</h1>
+      {brewers.map(({ id, ...otherBrewersProps }) => (
+        <BrewerCard key={id} {...otherBrewersProps} />
+      ))}
     </div>
   );
 };
