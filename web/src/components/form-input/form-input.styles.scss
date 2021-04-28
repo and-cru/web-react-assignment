@@ -18,11 +18,11 @@ $main-color: black;
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
-    width: 100%;
+    width: 90%;
     border: none;
     border-radius: 0;
     border-bottom: 1px solid $sub-color;
-    margin: 25px 0;
+    margin: 25px 0px 80px;
 
     &:focus {
       outline: none;
@@ -50,5 +50,9 @@ $main-color: black;
     &.shrink {
       @include shrinkLabel();
     }
+  }
+
+  .input {
+    width: 90%;
   }
 }

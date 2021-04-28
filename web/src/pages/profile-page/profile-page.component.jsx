@@ -36,9 +36,9 @@ const ProfilePage = (props) => {
   console.log(brewer.name);
 
   return (
-    <div className="">
+    <div className="profile-page">
       {headerToggle ? <h1>My Profile</h1> : <h1>toggleHeader</h1>}
-      <div>
+      <div className="profile-cardlist">
         {brewer
           .filter((item) => item.id === brewerId)
           .map(({ id, ...otherBrewerProps }) => (

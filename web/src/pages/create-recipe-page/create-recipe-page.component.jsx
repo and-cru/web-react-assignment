@@ -1,6 +1,8 @@
 import React, { useState, useContext } from "react";
 import FormInput from "../../components/form-input/form-input.component";
 import { CurrentUserContext } from "../../components/contexts/users/current-user.context";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 import "./create-recipe-page.styles.scss";
 
@@ -51,10 +53,78 @@ const CreateRecipe = () => {
     <div className="create-recipe">
       <h1>Create Recipe</h1>
       <form className="create-recipe-form" onSubmit={handleSubmit}>
-        <FormInput
+        <div>
+          <TextField
+            className="input"
+            id="outlined-basic"
+            name="title"
+            type="text"
+            value={data.title}
+            onChange={handleChange}
+            label="Title"
+            variant="outlined"
+            required
+          />
+          <TextField
+            className="input"
+            id="outlined-basic"
+            name="description"
+            type="text"
+            value={data.description}
+            onChange={handleChange}
+            label="Description"
+            variant="outlined"
+            required
+          />
+          <TextField
+            className="input"
+            id="outlined-basic"
+            name="bean_type"
+            type="text"
+            value={data.bean_type}
+            onChange={handleChange}
+            label="Bean type"
+            variant="outlined"
+            required
+          />
+          <TextField
+            className="input"
+            id="outlined-basic"
+            name="brew_time"
+            type="text"
+            value={data.brew_time}
+            onChange={handleChange}
+            label="Brew time"
+            variant="outlined"
+            required
+          />
+          <TextField
+            className="input"
+            id="outlined-basic"
+            name="brew_method"
+            type="text"
+            value={data.brew_method}
+            onChange={handleChange}
+            label="Brew method"
+            variant="outlined"
+            required
+          />
+          <TextField
+            className="input"
+            id="outlined-basic"
+            name="taste_notes"
+            type="text"
+            value={data.taste_notes}
+            onChange={handleChange}
+            label="Taste notes"
+            variant="outlined"
+            required
+          />
+        </div>
+        {/* <FormInput
           type="text"
           name="title"
-          value={data.title}
+          value={data.tdescription
           onChange={handleChange}
           label="Title"
           required
@@ -98,8 +168,15 @@ const CreateRecipe = () => {
           onChange={handleChange}
           label="Taste Notes"
           required
-        />
-        <button type="submit">POST</button>
+        /> */}
+        <Button
+          className="button"
+          variant="contained"
+          type="submit"
+          size="large"
+        >
+          Create
+        </Button>
       </form>
     </div>
   );

@@ -1,11 +1,13 @@
 import React, { useState, useContext } from "react";
+import { withRouter, Redirect } from "react-router-dom";
 import { CurrentUserContext } from "../../components/contexts/users/current-user.context";
-
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
 import "./create-brewer-page.styles.scss";
 
 import FormInput from "../../components/form-input/form-input.component";
 
-const CreateBrewer = () => {
+const CreateBrewer = (props) => {
   //initialise state
   const [data, setData] = useState({
     name: "",
@@ -41,21 +43,35 @@ const CreateBrewer = () => {
     const setCurrentUserId = () => currentUser.setId(resJson.id);
     setCurrentUserName();
     setCurrentUserId();
+    const onclickRedirect = () => props.history.push("/createrecipe");
+    onclickRedirect();
   };
 
   return (
     <div className="create-brewer">
       <h1>Create Brewer</h1>
       <form className="create-brewer-form" onSubmit={handleSubmit}>
-        <FormInput
-          type="text"
-          name="name"
-          value={data.name}
-          onChange={handleChange}
-          label="Name"
-          required
-        />
-        <button type="submit">POST</button>
+        <div>
+          <TextField
+            className="input"
+            type="text"
+            value={data.name}
+            id="outlined-basic"
+            label="Create Brewer"
+            variant="outlined"
+            name="name"
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <Button
+          className="button"
+          variant="contained"
+          type="submit"
+          size="large"
+        >
+          Create
+        </Button>
       </form>
     </div>
   );

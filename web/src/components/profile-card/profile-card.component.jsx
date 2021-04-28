@@ -6,12 +6,11 @@ import RecipeCard from "../recipe-card/recipe-card.component";
 
 const ProfileCard = ({ name, id, recipes, history, match }) => {
   return (
-    <div className="brewer-card-container">
-      <div>
-        {recipes.map(({ id, ...otherRecipeProps }) => (
-          <RecipeCard key={id} {...otherRecipeProps} />
-        ))}
-      </div>
+    <div className="profile-card-container">
+      {recipes.map(({ id, ...otherRecipeProps }) => (
+        <RecipeCard key={id} {...otherRecipeProps} />
+      ))}
+      <hr />
     </div>
   );
 };

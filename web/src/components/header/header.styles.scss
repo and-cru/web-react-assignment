@@ -4,6 +4,7 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+  font-size: 20px;
 
   .logo-container {
     height: 100%;
@@ -20,7 +21,7 @@
     cursor: pointer;
 
     .option {
-      padding: 10px 15px;
+      padding: 10px 10px;
     }
   }
 }

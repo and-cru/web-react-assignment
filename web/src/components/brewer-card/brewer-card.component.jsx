@@ -17,7 +17,9 @@ const BrewerCard = ({ name, id, recipes, history, match }) => {
           .map(({ id, ...otherRecipeProps }) => (
             <RecipeCard key={id} {...otherRecipeProps} />
           ))}
+
         <Button
+          className="brewer-card-button"
           onClick={() => history.push(`${match.url}/${id}`)}
           variant="outlined"
         >
