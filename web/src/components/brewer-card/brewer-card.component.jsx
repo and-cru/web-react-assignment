@@ -7,7 +7,6 @@ import "./brewer-card.styles.scss";
 import RecipeCard from "../recipe-card/recipe-card.component";
 
 const BrewerCard = ({ name, id, recipes, history, match }) => {
-  console.log(match);
   return (
     <div className="brewer-card-container">
       <h1> {name.toUpperCase()} </h1>
@@ -18,23 +17,15 @@ const BrewerCard = ({ name, id, recipes, history, match }) => {
           .map(({ id, ...otherRecipeProps }) => (
             <RecipeCard key={id} {...otherRecipeProps} />
           ))}
-        {/* {recipe.title.toUpperCase()} : {recipe.description}:{" "}
-              {recipe.brew_method} :{recipe.bean_type}
-            */}
-
-        <Button variant="contained" color="primary">
-          Primary
+        <Button
+          onClick={() => history.push(`${match.url}/${id}`)}
+          variant="outlined"
+        >
+          View all recipes by brewer
         </Button>
-        {/* <button onClick={() => history.push("http://localhost:9000/profile")}>
-          View Profile
-        </button> */}
       </div>
     </div>
   );
 };
 
 export default withRouter(BrewerCard);
-
-// {brewers.map(({ id, ...otherBrewersProps }) => (
-//           <BrewerCard key={id} id={id} {...otherBrewersProps} />
-//         ))}

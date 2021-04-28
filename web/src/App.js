@@ -26,7 +26,7 @@ function App() {
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route path="/profile" component={ProfilePage} />
+          <Route path="/brewersrecipes/:profileId" component={ProfilePage} />
           <Route path="/brewersrecipes" component={BrewersRecipesPage} />
           <Route path="/createbrewer" component={CreateBrewerPage} />
           <Route path="/createrecipe" component={CreateRecipePage} />

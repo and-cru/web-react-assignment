@@ -29,7 +29,7 @@ const Header = () => {
           </Link>
         )}
         {currentUser.id && (
-          <Link className="option" to="/profile">
+          <Link className="option" to="/brewersrecipes/:profileId">
             My Profile
           </Link>
         )}

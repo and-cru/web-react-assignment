@@ -1,16 +1,30 @@
 import React, { useState, useEffect, useContext } from "react";
+import { withRouter } from "react-router-dom";
 import { CurrentUserContext } from "../../components/contexts/users/current-user.context";
 
 import "./profile-page.styles.scss";
 
 import BrewerCard from "../../components/brewer-card/brewer-card.component";
 
-const ProfilePage = () => {
+const ProfilePage = (props) => {
   //initialise state
   const [brewer, setBrewer] = useState([]);
 
   const currentUser = useContext(CurrentUserContext);
-  const brewerId = currentUser.id;
+  // const brewerId = currentUser.id;
+
+  if (props.match.params.profileId === ":profileId") {
+    const brewerId = currentUser.id;
+  } else {
+    const brewerId = parseInt(props.match.params.profileId);
+  }
+
+  const brewerId =
+    props.match.params.profileId === ":profileId"
+      ? currentUser.id
+      : parseInt(props.match.params.profileId);
+  // console.log(props.match.params.profileId);
+  // const profileId = parseInt(props.match.params.profileId);
 
   //run side-effect fetch whenever ProfilePage renders
   useEffect(() => {
@@ -40,4 +54,4 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default withRouter(ProfilePage);
