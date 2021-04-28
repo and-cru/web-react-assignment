@@ -4,27 +4,22 @@ import { CurrentUserContext } from "../../components/contexts/users/current-user
 
 import "./profile-page.styles.scss";
 
-import BrewerCard from "../../components/brewer-card/brewer-card.component";
+import ProfileCard from "../../components/profile-card/profile-card.component";
 
 const ProfilePage = (props) => {
   //initialise state
   const [brewer, setBrewer] = useState([]);
 
   const currentUser = useContext(CurrentUserContext);
-  // const brewerId = currentUser.id;
 
-  if (props.match.params.profileId === ":profileId") {
-    const brewerId = currentUser.id;
-  } else {
-    const brewerId = parseInt(props.match.params.profileId);
-  }
-
+  //conditional to render based on url or currentUser
   const brewerId =
     props.match.params.profileId === ":profileId"
       ? currentUser.id
       : parseInt(props.match.params.profileId);
-  // console.log(props.match.params.profileId);
-  // const profileId = parseInt(props.match.params.profileId);
+
+  const headerToggle =
+    props.match.params.profileId === ":profileId" ? true : false;
 
   //run side-effect fetch whenever ProfilePage renders
   useEffect(() => {
@@ -38,16 +33,16 @@ const ProfilePage = (props) => {
     fetchBrewer();
   }, []);
 
-  console.log(brewer);
+  console.log(brewer.name);
 
   return (
     <div className="">
-      <h1>My Profile </h1>
+      {headerToggle ? <h1>My Profile</h1> : <h1>toggleHeader</h1>}
       <div>
         {brewer
           .filter((item) => item.id === brewerId)
           .map(({ id, ...otherBrewerProps }) => (
-            <BrewerCard key={id} {...otherBrewerProps} />
+            <ProfileCard key={id} id={id} {...otherBrewerProps} />
           ))}
       </div>
     </div>
