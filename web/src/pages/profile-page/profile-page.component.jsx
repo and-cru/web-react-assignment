@@ -24,21 +24,11 @@ const ProfilePage = () => {
     fetchBrewer();
   }, []);
 
-  // if (brewer.name) {
-  //   const recipes = brewer.recipes;
-  //   const recipe = () =>
-  //     recipes.forEach((element) => {
-  //       console.log(element);
-  //     });
-  //   recipe();
-
   console.log(brewer);
 
   return (
     <div className="">
       <h1>My Profile </h1>
-      {/* <p>{brewer.name}</p>
-      <p>{brewer.id}</p> */}
       <div>
         {brewer
           .filter((item) => item.id === brewerId)

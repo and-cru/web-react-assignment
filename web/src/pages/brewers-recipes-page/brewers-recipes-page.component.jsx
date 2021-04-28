@@ -23,11 +23,13 @@ const BrewersRecipesPage = () => {
   console.log(brewers);
 
   return (
-    <div className="">
+    <div className="brewers-recipes-page">
       <h1>Recipes</h1>
-      {brewers.map(({ id, ...otherBrewersProps }) => (
-        <BrewerCard key={id} {...otherBrewersProps} />
-      ))}
+      <div className="brewers-recipes-cardlist">
+        {brewers.map(({ id, ...otherBrewersProps }) => (
+          <BrewerCard key={id} id={id} {...otherBrewersProps} />
+        ))}
+      </div>
     </div>
   );
 };
