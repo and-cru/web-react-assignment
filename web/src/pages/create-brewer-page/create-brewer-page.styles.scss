@@ -1,11 +1,8 @@
 .create-brewer {
   display: flex;
   flex-direction: column;
-
-  // border: 1px solid grey;
   border-radius: 20px;
   padding: 25px;
-  // cursor: pointer;
   -moz-osx-font-smoothing: grayscale;
   backface-visibility: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -16,9 +13,7 @@
     margin: 45px 0;
 
     .input {
-      // font-size: 18px;
       padding: 10px 10px 10px 5px;
-      // display: block;
       width: 90%;
       border: none;
       border-radius: 0;

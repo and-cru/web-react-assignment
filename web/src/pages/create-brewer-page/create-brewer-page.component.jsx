@@ -1,18 +1,16 @@
 import React, { useState, useContext } from "react";
-import { withRouter, Redirect } from "react-router-dom";
 import { CurrentUserContext } from "../../components/contexts/users/current-user.context";
 import Button from "@material-ui/core/Button";
 import TextField from "@material-ui/core/TextField";
-import "./create-brewer-page.styles.scss";
 
-import FormInput from "../../components/form-input/form-input.component";
+import "./create-brewer-page.styles.scss";
 
 const CreateBrewer = (props) => {
   //initialise state
   const [data, setData] = useState({
     name: "",
   });
-
+  // use currentUser.id from context to store userdata in context state
   const currentUser = useContext(CurrentUserContext);
 
   //form data from Form saved in state

@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useContext } from "react";
 import { withRouter } from "react-router-dom";
 import { CurrentUserContext } from "../../components/contexts/users/current-user.context";
+import ProfileCard from "../../components/profile-card/profile-card.component";
 
 import "./profile-page.styles.scss";
-
-import ProfileCard from "../../components/profile-card/profile-card.component";
 
 const ProfilePage = (props) => {
   //initialise state
@@ -18,6 +17,7 @@ const ProfilePage = (props) => {
       ? currentUser.id
       : parseInt(props.match.params.profileId);
 
+  //conditional to render the h1 content
   const headerToggle =
     props.match.params.profileId === ":profileId" ? true : false;
 
@@ -32,8 +32,6 @@ const ProfilePage = (props) => {
     };
     fetchBrewer();
   }, []);
-
-  console.log(brewer.name);
 
   return (
     <div className="profile-page">

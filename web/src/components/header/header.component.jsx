@@ -6,7 +6,6 @@ import "./header.styles.scss";
 
 const Header = () => {
   const currentUser = useContext(CurrentUserContext);
-  console.log(currentUser); //REMOVE
 
   return (
     <div className="header">

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
+import BrewerCard from "../../components/brewer-card/brewer-card.component";
 
 import "./brewers-recipes-page.styles.scss";
-
-import BrewerCard from "../../components/brewer-card/brewer-card.component";
 
 const BrewersRecipesPage = () => {
   //initialise state
