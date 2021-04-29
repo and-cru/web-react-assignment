@@ -1,8 +1,6 @@
 .brewer-card-container {
   display: flex;
   flex-direction: column;
-
-  // border: 1px solid grey;
   border-radius: 20px;
   padding: 25px;
   cursor: pointer;
@@ -11,7 +9,6 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transform: translateZ(0);
   transition: transform 0.25s ease-out;
-  position: relative;
   background-color: #caf8cd;
 
   &:hover {
@@ -20,9 +17,6 @@
 
   .brewer-card-button {
     background-color: white;
-    position: absolute;
-    bottom: 3%;
-    right: 15%;
 
     &:hover {
       background-color: #7fc688;
