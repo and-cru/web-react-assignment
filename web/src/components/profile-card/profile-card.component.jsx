@@ -1,10 +1,9 @@
 import React from "react";
+import RecipeCard from "../recipe-card/recipe-card.component";
 
 import "./profile-card.styles.scss";
 
-import RecipeCard from "../recipe-card/recipe-card.component";
-
-const ProfileCard = ({ name, id, recipes, history, match }) => {
+const ProfileCard = ({ recipes }) => {
   return (
     <div className="profile-card-container">
       {recipes.map(({ id, ...otherRecipeProps }) => (

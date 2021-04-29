@@ -1,16 +1,15 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import RecipeCard from "../recipe-card/recipe-card.component";
 import Button from "@material-ui/core/Button";
 
 import "./brewer-card.styles.scss";
-
-import RecipeCard from "../recipe-card/recipe-card.component";
 
 const BrewerCard = ({ name, id, recipes, history, match }) => {
   return (
     <div className="brewer-card-container">
       <h2> {name.toUpperCase()} </h2>
-      <p>{id}</p>
+
       <div>
         {recipes
           .filter((item, idx) => idx < 1)

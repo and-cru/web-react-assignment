@@ -19,8 +19,6 @@ const BrewersRecipesPage = () => {
     fetchBrewers();
   }, []);
 
-  console.log(brewers);
-
   return (
     <div className="brewers-recipes-page">
       <h1>RECIPES</h1>

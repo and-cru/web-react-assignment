@@ -44,6 +44,8 @@ const CreateRecipe = (props) => {
         body: JSON.stringify(data),
       }
     );
+    console.log(response);
+
     // give redirect funtionality to button
     const onclickRedirect = () =>
       props.history.push("/brewersrecipes/:profileId");

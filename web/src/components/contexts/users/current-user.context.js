@@ -2,7 +2,7 @@ import React, { createContext, useState } from "react";
 
 export const CurrentUserContext = createContext();
 
-//Component allows state to update in context
+//function allows state to be updated in context
 export const CurrentUserProvider = ({ children }) => {
   const [name, setName] = useState("");
   const [id, setId] = useState("");
