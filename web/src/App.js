@@ -1,10 +1,6 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Route, Switch } from "react-router-dom";
-import {
-  CurrentUserContext, // REMOVE
-  CurrentUserProvider,
-} from "./components/contexts/users/current-user.context";
-// import axios from "axios";
+import { CurrentUserProvider } from "./components/contexts/users/current-user.context";
 
 import "./App.css";
 
@@ -16,10 +12,6 @@ import CreateBrewerPage from "./pages/create-brewer-page/create-brewer-page.comp
 import CreateRecipePage from "./pages/create-recipe-page/create-recipe-page.component";
 
 function App() {
-  //TO BE REMOVED: DEVELOPMENT ONLY! track currentUser state
-  const currentUser = useContext(CurrentUserContext);
-  console.log(currentUser);
-  // -----------------------------------------
   return (
     <div className="App">
       <CurrentUserProvider>
@@ -35,25 +27,5 @@ function App() {
     </div>
   );
 }
-//const API_URL = "http://localhost:8080";
-
-// const checker = async () => {
-//   const health = await axios.get(`${API_URL}/health`, {
-//     headers: {
-//       "Access-Control-Allow-Origin": "*",
-//     },
-//   });
-
-//   console.log("Healh: ", health);
-// };
-
-// const CorsChecker = async () => {
-//   const response = await fetch(
-//     "http://localhost:8080/brewers/?skip=0&limit=100"
-//   );
-//   const resJson = await response.json();
-
-//   console.log(resJson[0]["recipes"][0].description);
-// };
 
 export default App;

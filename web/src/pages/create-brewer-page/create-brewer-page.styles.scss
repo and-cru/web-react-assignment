@@ -9,8 +9,8 @@
   -moz-osx-font-smoothing: grayscale;
   backface-visibility: hidden;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  // transform: translateZ(0);
-  // transition: transform 0.25s ease-out;
+  color: #7fc688;
+
   .create-brewer-form {
     position: relative;
     margin: 45px 0;
@@ -23,6 +23,15 @@
       border: none;
       border-radius: 0;
       margin: 10px 0px 40px;
+    }
+
+    .create-brewer-button {
+      background-color: #7fc688;
+      color: white;
+
+      &:hover {
+        background-color: #1e9918;
+      }
     }
   }
 }

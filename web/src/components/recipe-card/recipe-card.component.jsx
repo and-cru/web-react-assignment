@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../assets/images/1.jpg";
+import image from "../../assets/images/recipeImg.png";
 import "./recipe-card.styles.scss";
 
 const RecipeCard = ({ ...otherRecipeProps }) => {

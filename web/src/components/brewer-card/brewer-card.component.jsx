@@ -9,7 +9,7 @@ import RecipeCard from "../recipe-card/recipe-card.component";
 const BrewerCard = ({ name, id, recipes, history, match }) => {
   return (
     <div className="brewer-card-container">
-      <h1> {name.toUpperCase()} </h1>
+      <h2> {name.toUpperCase()} </h2>
       <p>{id}</p>
       <div>
         {recipes
@@ -21,7 +21,7 @@ const BrewerCard = ({ name, id, recipes, history, match }) => {
         <Button
           className="brewer-card-button"
           onClick={() => history.push(`${match.url}/${id}`)}
-          variant="outlined"
+          variant="contained"
         >
           View all recipes by brewer
         </Button>

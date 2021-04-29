@@ -24,7 +24,7 @@ const BrewersRecipesPage = () => {
 
   return (
     <div className="brewers-recipes-page">
-      <h1>Recipes</h1>
+      <h1>RECIPES</h1>
       <div className="brewers-recipes-cardlist">
         {brewers.map(({ id, ...otherBrewersProps }) => (
           <BrewerCard key={id} id={id} {...otherBrewersProps} />

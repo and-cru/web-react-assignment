@@ -57,7 +57,7 @@ const CreateBrewer = (props) => {
             type="text"
             value={data.name}
             id="outlined-basic"
-            label="Create Brewer"
+            label="Name"
             variant="outlined"
             name="name"
             onChange={handleChange}
@@ -65,7 +65,7 @@ const CreateBrewer = (props) => {
           />
         </div>
         <Button
-          className="button"
+          className="create-brewer-button"
           variant="contained"
           type="submit"
           size="large"

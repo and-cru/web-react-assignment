@@ -1,12 +1,11 @@
 import React, { useState, useContext } from "react";
-import FormInput from "../../components/form-input/form-input.component";
 import { CurrentUserContext } from "../../components/contexts/users/current-user.context";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
 import "./create-recipe-page.styles.scss";
 
-const CreateRecipe = () => {
+const CreateRecipe = (props) => {
   //initialse state
   const [data, setData] = useState({
     title: "",
@@ -47,6 +46,10 @@ const CreateRecipe = () => {
     );
     const resJson = await response.json();
     console.log(resJson); //Remove
+
+    const onclickRedirect = () =>
+      props.history.push("/brewersrecipes/:profileId");
+    onclickRedirect();
   };
 
   return (
@@ -121,56 +124,9 @@ const CreateRecipe = () => {
             required
           />
         </div>
-        {/* <FormInput
-          type="text"
-          name="title"
-          value={data.tdescription
-          onChange={handleChange}
-          label="Title"
-          required
-        />
-        <FormInput
-          type="text"
-          name="description"
-          value={data.description}
-          onChange={handleChange}
-          label="Description"
-          required
-        />
-        <FormInput
-          type="text"
-          name="bean_type"
-          value={data.bean_type}
-          onChange={handleChange}
-          label="Bean Type"
-          required
-        />
-        <FormInput
-          type="text"
-          name="brew_time"
-          value={data.brew_time}
-          onChange={handleChange}
-          label="Brew Time"
-          required
-        />
-        <FormInput
-          type="text"
-          name="brew_method"
-          value={data.brew_method}
-          onChange={handleChange}
-          label="Brew Method"
-          required
-        />
-        <FormInput
-          type="text"
-          name="taste_notes"
-          value={data.taste_notes}
-          onChange={handleChange}
-          label="Taste Notes"
-          required
-        /> */}
+
         <Button
-          className="button"
+          className="create-recipe-button"
           variant="contained"
           type="submit"
           size="large"

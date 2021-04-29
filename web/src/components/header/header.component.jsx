@@ -4,8 +4,6 @@ import { CurrentUserContext } from "../contexts/users/current-user.context";
 
 import "./header.styles.scss";
 
-import { ReactComponent as Logo } from "../../assets/crown.svg";
-
 const Header = () => {
   const currentUser = useContext(CurrentUserContext);
   console.log(currentUser); //REMOVE
@@ -13,7 +11,7 @@ const Header = () => {
   return (
     <div className="header">
       <Link className="logo-container" to="/">
-        <Logo className="logo" />
+        &CruBrew
       </Link>
       <div className="options">
         <Link className="option" to="/brewersrecipes">

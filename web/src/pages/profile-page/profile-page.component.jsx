@@ -37,7 +37,7 @@ const ProfilePage = (props) => {
 
   return (
     <div className="profile-page">
-      {headerToggle ? <h1>My Profile</h1> : <h1>toggleHeader</h1>}
+      {headerToggle ? <h1>My Profile</h1> : <h1>Brewer Profile</h1>}
       <div className="profile-cardlist">
         {brewer
           .filter((item) => item.id === brewerId)
